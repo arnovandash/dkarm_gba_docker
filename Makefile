@@ -10,7 +10,7 @@ help:
 
 # Docker build targets
 docker-build: ## Build base docker image
-	docker build -f base/Dockerfile --pull -t dkarm_base:local .
+	DOCKER_BUILDKIT=1 docker build -f base/Dockerfile --pull -t dkarm_base:local .
 
 docker-build-dusk: ## Build dusk docker image
-	docker build -f dusk/Dockerfile --pull -t dkarm_dusk:local .
+	DOCKER_BUILDKIT=1 docker build -f dusk/Dockerfile --pull -t dkarm_dusk:local .
